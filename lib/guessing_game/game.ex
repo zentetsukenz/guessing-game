@@ -142,7 +142,7 @@ defmodule GuessingGame.Game do
     guessed_number = List.last(guesses)
 
     cond do
-      length(guesses) > maximum_allowance -> {:lose, game}
+      length(guesses) > maximum_allowance - 1 -> {:lose, game}
       guessed_number == answer -> {:win, game}
       guessed_number > answer -> {:too_high, game}
       guessed_number < answer -> {:too_low, game}

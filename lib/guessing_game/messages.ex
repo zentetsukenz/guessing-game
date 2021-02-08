@@ -104,6 +104,8 @@ defmodule GuessingGame.Messages do
     """
   end
 
+  def summarize(%Game{state: :exit}), do: ""
+
   defp guess_left_count(%Game{max_guess_count: maximum_allowance, guesses: guesses}) do
     maximum_allowance - length(guesses)
   end

@@ -30,7 +30,7 @@ defmodule GuessingGame.Game do
 
   @spec new :: Game.t()
   def new() do
-    %__MODULE__{state: :new}
+    %__MODULE__{state: :new, max_guess_count: @default_max_guess_count}
   end
 
   @doc """

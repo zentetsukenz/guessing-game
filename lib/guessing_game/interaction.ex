@@ -1,13 +1,16 @@
 defmodule GuessingGame.Interaction do
+  require Logger
+
   @spec puts(String.t()) :: :ok
   def puts(message) do
-    IO.puts(message)
+    Logger.info(message)
   end
 
   @spec gets(String.t()) :: :error | integer()
   def gets(prompt) do
-    prompt
-    |> IO.gets()
+    Logger.info(prompt)
+
+    IO.gets(nil)
     |> String.trim()
     |> Integer.parse()
     |> case do

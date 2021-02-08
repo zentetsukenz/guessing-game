@@ -15,7 +15,7 @@ defmodule GuessingGame.Messages do
   end
 
   @spec start_game_option :: t()
-  def start_game_option() do
+  def start_game_option do
     ~S"""
     Please select one of the option below.
 
@@ -23,6 +23,14 @@ defmodule GuessingGame.Messages do
     2. Contribute.
 
     0. Quit.
+
+    """
+  end
+
+  @spec contribute :: String.t()
+  def contribute do
+    ~S"""
+    Please visit: https://github.com/zentetsukenz/guessing-game#contribute
 
     """
   end

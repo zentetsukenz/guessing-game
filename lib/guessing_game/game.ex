@@ -78,6 +78,15 @@ defmodule GuessingGame.Game do
     |> Game.step(game)
   end
 
+  def step(2, %__MODULE__{state: :new} = game) do
+    Messages.contribute()
+    |> Interaction.puts()
+
+    Messages.start_game_option()
+    |> Interaction.gets()
+    |> Game.step(game)
+  end
+
   def step(_, %__MODULE__{state: :new} = game) do
     game
     |> Messages.invalid_option()
@@ -85,7 +94,7 @@ defmodule GuessingGame.Game do
 
     Messages.start_game_option()
     |> Interaction.gets()
-    |> Game.step(Game.new())
+    |> Game.step(game)
   end
 
   def step(

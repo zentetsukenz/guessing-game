@@ -1,19 +1,20 @@
 defmodule GuessingGame do
-  @moduledoc """
-  Documentation for `GuessingGame`.
-  """
+  @moduledoc false
 
-  @doc """
-  Main.
+  alias GuessingGame.{
+    Interaction,
+    Messages,
+    Game
+  }
 
-  ## Examples
-
-      iex> GuessingGame.hello()
-      :world
-
-  """
+  @doc false
   def main(_args) do
-    command = IO.gets("Let's get started!")
-    IO.puts(command)
+    Interaction.puts(Messages.welcome())
+
+    Messages.option()
+    |> Interaction.gets()
+    |> Game.step(Game.new())
+    |> Messages.summarize()
+    |> Interaction.puts()
   end
 end

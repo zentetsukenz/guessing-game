@@ -7,11 +7,11 @@ defmodule GuessingGame do
     Game
   }
 
-  @doc false
+  @spec main(OptionParser.argv()) :: :ok
   def main(_args) do
     Interaction.puts(Messages.welcome())
 
-    Messages.option()
+    Messages.start_game_option()
     |> Interaction.gets()
     |> Game.step(Game.new())
     |> Messages.summarize()

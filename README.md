@@ -1,21 +1,15 @@
 # GuessingGame
 
-**TODO: Add description**
+The guessing game.
 
-## Installation
+Guess the number between specific range. You have 10 chances!
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `guessing_game` to your list of dependencies in `mix.exs`:
+## Play the game
 
-```elixir
-def deps do
-  [
-    {:guessing_game, "~> 0.1.0"}
-  ]
-end
-```
+1. Clone the repo.
+2. Allow guessing_game executable to be executed. `chmod +x guessing_game`.
+3. Run the game. `./guessing_game`.
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/guessing_game](https://hexdocs.pm/guessing_game).
+## Contribute
 
+Fork, branch, PR!
